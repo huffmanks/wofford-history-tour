@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    min-height: calc(100vh - 100px);
+    margin-top: 100px;
+    background-color: #333;
+    font-family: 'proxima-nova', sans-serif;
+}
+
+/* base */
+.building img,
+.building video {
+    display: block;
+    margin-bottom: 0;
+}
+
+.building p {
+    margin: 20px 0 0;
+}
+
+/* items */
+.building {
+    width: min(400px, 100%);
+    margin: 0 auto;
+    background-color: #ccc;
+    border-radius: 25px;
+}
+
+.building-header {
+    position: relative;
+    width: 100%;
+}
+
+.building-media img,
+.building-media video {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 25px 25px 0 0;
+}
+
+.building-overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.overlay-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 10px;
+    background: linear-gradient(0deg, rgba(30, 30, 30, 1) 0%, rgba(30, 30, 30, 0.01) 100%);
+}
+
+.content-title {
+    margin-bottom: 10px;
+    color: #fff;
+    font-size: 24px;
+}
+
+.media-btn-group {
+    display: flex;
+    gap: 10px;
+}
+
+.media-btn {
+    display: flex;
+    align-items: center;
+    padding: 6px 10px;
+    background-color: #8a6e4b;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 0.75px;
+    text-transform: uppercase;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.media-btn-alt {
+    background-color: #333;
+}
+
+.media-btn:hover,
+.media-btn:focus {
+    background-color: rgba(138, 110, 75, 0.8);
+}
+
+.media-btn-alt:hover,
+.media-btn-alt:focus {
+    background-color: rgba(40, 40, 41, 0.8);
+}
+
+.btn-icon {
+    margin-right: 5px;
+}
+
+.btn-icon img {
+    width: 12px;
+}
+
+.building-footer {
+    padding: 10px 20px;
+}
+
+.transcript-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: rift, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.transcript-btn {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.transcript-btn::after {
+    content: '-';
+    color: #8a6e4b;
+    font-size: 24px;
+    font-weight: normal;
+}
+
+.transcript-panel.closed .transcript-btn::after {
+    content: '+';
+}
+
+.building-overlay.hide,
+.transcript-panel.closed .transcript-content {
+    display: none;
+}
