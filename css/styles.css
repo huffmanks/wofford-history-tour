@@ -27,7 +27,7 @@ body {
 .building {
     width: min(400px, 100%);
     margin: 0 auto;
-    background-color: #ccc;
+    background-color: #f9f9f9;
     border-radius: 25px;
 }
 
@@ -140,6 +140,7 @@ body {
 }
 
 .building-overlay.hide,
+.building-media img.hide,
 .transcript-panel.closed .transcript-content {
     display: none;
 }
