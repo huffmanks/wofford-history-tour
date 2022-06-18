@@ -27,7 +27,7 @@ body {
 .building {
     width: min(400px, 100%);
     margin: 0 auto;
-    background-color: #f9f9f9;
+    background-color: #f1f3f4;
     border-radius: 25px;
 }
 
@@ -36,11 +36,21 @@ body {
     width: 100%;
 }
 
+.building-media {
+    position: relative;
+}
+
 .building-media img,
 .building-media video {
     width: 100%;
     object-fit: cover;
     border-radius: 25px 25px 0 0;
+}
+
+.building-media audio {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
 }
 
 .building-overlay {

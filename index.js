@@ -1,6 +1,24 @@
 const buildings = Array.from(document.querySelectorAll('[data-building]'))
 const panels = Array.from(document.querySelectorAll('[data-transcript-panel]'))
 
+let userAgent = navigator.userAgent
+let browserName
+
+if (userAgent.match(/chrome|chromium|crios/i)) {
+    browserName = 'chrome'
+} else if (userAgent.match(/firefox|fxios/i)) {
+    browserName = 'firefox'
+} else if (userAgent.match(/safari/i)) {
+    browserName = 'safari'
+} else if (userAgent.match(/opr\//i)) {
+    browserName = 'opera'
+} else if (userAgent.match(/edg/i)) {
+    browserName = 'edge'
+} else {
+    browserName = 'No browser detection'
+}
+console.log('browser', browserName)
+
 buildings.map((building) => {
     const media = building.querySelector('[data-media]')
     const image = media.querySelector('img')
@@ -28,15 +46,15 @@ buildings.map((building) => {
     listenBtn.addEventListener('click', () => {
         overlay.classList.toggle('hide')
 
-        const video = document.createElement('audio')
+        const audio = document.createElement('audio')
 
-        video.src = './assets/audio/draft.mp3'
+        audio.src = './assets/audio/draft.mp3'
 
-        video.autoplay = true
-        video.controls = true
-        video.muted = false
+        audio.autoplay = true
+        audio.controls = true
+        audio.muted = false
 
-        media.appendChild(video)
+        media.appendChild(audio)
     })
 })
 
