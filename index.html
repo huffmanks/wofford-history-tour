@@ -17,16 +17,34 @@
             <div class="building-media" data-media>
                 <img src="./assets/images/draft.jpg" alt="Hugh S. Black Building" />
             </div>
-            <div class="building-overlay" data-overlay>
-                <div class="overlay-content">
+            <div class="building-overlay">
+                <div class="media-options" data-media-options>
                     <div class="media-btn-group">
-                        <button class="media-btn" data-play>
-                            <span class="btn-icon"><img src="./assets/icons/play.png" alt="play icon" /></span>
-                            <span>Play</span>
+                        <button class="media-btn" data-watch>
+                            <span class="btn-icon"><img src="./assets/icons/watch.png" alt="play icon" /></span>
+                            <span>Watch</span>
                         </button>
                         <button class="media-btn media-btn-alt" data-listen>
                             <span class="btn-icon"><img src="./assets/icons/listen.png" alt="listen icon" /></span>
                             <span>Listen</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="audio-player hide" data-audio-player>
+                    <div class="audio-controls">
+                        <button class="control-btn" data-audio-play>
+                            <img src="./assets/icons/controls-pause.png" alt="play/pause icon" />
+                        </button>
+                        <div class="time-display">
+                            <div class="current-time" data-audio-time>0:00</div>
+                            <div class="time-divider">/</div>
+                            <div class="duration" data-audio-duration>0:00</div>
+                        </div>
+                        <div class="audio-timeline">
+                            <input class="audio-track" type="range" max="100" value="0" data-audio-track>
+                        </div>
+                        <button class="control-btn" data-audio-volume>
+                            <img src="./assets/icons/controls-volume.png" alt="volume icon" />
                         </button>
                     </div>
                 </div>
@@ -37,14 +55,14 @@
             <div class="building-metrics">
                 <div class="metric-item">
                     <div class="metric-icon">
-                        <img src="./assets/icons/map-point.png" alt="map icon">
+                        <img src="./assets/icons/location-stop.png" alt="map icon">
                     </div>
-                    <div class="metric-info">#1</div>
-                    <div class="metric-label">Stop</div>
+                    <div class="metric-info stop">1</div>
+                    <div class="metric-label">/ 14 Stop</div>
                 </div>
                 <div class="metric-item">
                     <div class="metric-icon">
-                        <img src="./assets/icons/clock.png" alt="clock icon">
+                        <img src="./assets/icons/duration.png" alt="clock icon">
                     </div>
                     <div class="metric-info">25s</div>
                     <div class="metric-label">Duration</div>
@@ -58,7 +76,7 @@
                 </div>
                 <div class="building-tabs">
                     <div class="panel-content show" data-building-tab-content="1">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati alias aliquid dolores, veritatis cumque illum fugiat aut? Voluptas, perspiciatis incidunt.</p>
+                        <p>Hugh S. Black Building originally was funded by alumni donations and constructed in 1888 as Alumni Hall. It was the college’s first student residence hall.</p>
                     </div>
                     <div class="panel-content" data-building-tab-content="2">
                         <img src="./assets/images/map.png" alt="map" />
