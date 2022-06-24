@@ -1,23 +1,5 @@
 const buildings = Array.from(document.querySelectorAll('[data-building]'))
-const panels = Array.from(document.querySelectorAll('[data-transcript-panel]'))
-
-let userAgent = navigator.userAgent
-let browserName
-
-if (userAgent.match(/chrome|chromium|crios/i)) {
-    browserName = 'chrome'
-} else if (userAgent.match(/firefox|fxios/i)) {
-    browserName = 'firefox'
-} else if (userAgent.match(/safari/i)) {
-    browserName = 'safari'
-} else if (userAgent.match(/opr\//i)) {
-    browserName = 'opera'
-} else if (userAgent.match(/edg/i)) {
-    browserName = 'edge'
-} else {
-    browserName = 'No browser detection'
-}
-console.log('browser', browserName)
+const tabs = Array.from(document.querySelectorAll('[data-building-tab]'))
 
 buildings.map((building) => {
     const media = building.querySelector('[data-media]')
@@ -58,10 +40,36 @@ buildings.map((building) => {
     })
 })
 
-panels.map((panel) => {
-    const btn = panel.querySelector('[data-transcript-btn]')
+tabs.map((tab) => {
+    const tabBtns = Array.from(tab.querySelectorAll('[data-building-tab-btn]'))
+    const tabEls = Array.from(tab.querySelectorAll('[data-building-tab-content]'))
 
-    btn.addEventListener('click', () => {
-        panel.classList.toggle('closed')
+    console.log(tabBtns)
+
+    tabBtns.map((button) => {
+        console.log(button)
+        button.addEventListener('click', () => {
+            const tabNumber = button.dataset.buildingTabBtn
+            const tabContent = tab.querySelector(`[data-building-tab-content="${tabNumber}"]`)
+
+            const prevActiveBtn = tabBtns.filter((btn) => {
+                return btn.classList.contains('active')
+            })
+
+            if (prevActiveBtn.length > 0 && prevActiveBtn[0] !== button) {
+                prevActiveBtn[0].classList.remove('active')
+            }
+
+            const prevActiveTab = tabEls.filter((tab) => {
+                return tab.classList.contains('show')
+            })
+
+            if (prevActiveTab.length > 0) {
+                prevActiveTab[0].classList.remove('show')
+            }
+
+            button.classList.add('active')
+            tabContent.classList.add('show')
+        })
     })
 })
