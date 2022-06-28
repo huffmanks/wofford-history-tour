@@ -13,7 +13,7 @@ body {
 /* Building */
 .building {
     width: min(400px, 100%);
-    margin: 10px auto;
+    margin: 0 auto;
     background-color: #eee;
     border-radius: 5px;
 }
@@ -267,7 +267,15 @@ body {
 
 .building-previews {
     margin-top: 30px;
+    padding: 0 15px;
     background-color: #fff;
+}
+
+.previews-heading {
+    font-weight: bold;
+    font-size: 36px;
+    margin: 20px 0 15px;
+    text-align: center;
 }
 
 .building-preview-container {
