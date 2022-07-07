@@ -1,3 +1,10 @@
+// @    ENV: PROD
+// @    NAME: 'DOMContentLoaded' start
+// @    NOTE: Uncomment below and ending }) at the bottom
+// window.addEventListener('DOMContentLoaded', () => {
+//     const h2 = document.querySelector('#page-builder h2')
+//     h2.remove()
+
 const buildings = Array.from(document.querySelectorAll('[data-building]'))
 const tabs = Array.from(document.querySelectorAll('[data-building-tab]'))
 
@@ -23,7 +30,7 @@ const createVideo = (image, mediaOptions, media) => {
     const video = document.createElement('video')
 
     video.src = './assets/videos/draft.mp4'
-    video.poster = './assets/images/draft.jpg'
+    video.poster = './assets/images/posters/hugh-black-poster.jpg'
 
     video.autoplay = true
     video.controls = true
@@ -61,6 +68,7 @@ buildings.map((building) => {
     const image = media.querySelector('img')
     let audioEl
 
+    const buildingOverlay = building.querySelector('.building-overlay')
     const mediaOptions = building.querySelector('[data-media-options]')
     const watchBtn = building.querySelector('[data-watch]')
     const listenBtn = building.querySelector('[data-listen]')
@@ -80,11 +88,14 @@ buildings.map((building) => {
     watchBtn.addEventListener('click', () => {
         createVideo(image, mediaOptions, media)
 
+        buildingOverlay.classList.toggle('out')
+
         const videoEl = media.querySelector('video')
 
         videoEl.addEventListener('ended', () => {
             videoEl.remove()
 
+            buildingOverlay.classList.toggle('out')
             image.classList.toggle('hide')
             mediaOptions.classList.toggle('hide')
         })
@@ -92,6 +103,8 @@ buildings.map((building) => {
 
     listenBtn.addEventListener('click', () => {
         createAudio(mediaOptions, audioPlayer, audioDurationEl, audioTrackEl, media)
+
+        buildingOverlay.classList.toggle('out')
 
         audioEl = media.querySelector('audio')
 
@@ -102,6 +115,7 @@ buildings.map((building) => {
         audioEl.addEventListener('ended', () => {
             audioEl.remove()
 
+            buildingOverlay.classList.toggle('out')
             mediaOptions.classList.toggle('hide')
             audioPlayer.classList.toggle('hide')
 
@@ -183,3 +197,4 @@ tabs.map((tab) => {
         })
     })
 })
+// }) Prod 'DOMContentLoaded' end

@@ -10,9 +10,39 @@ body {
     font-family: 'proxima-nova', sans-serif;
 }
 
+.dev-wrapper {
+    width: min(1170px, 100%); /* testing for dev env | REMOVE for PROD */
+    margin: 0 auto;
+    padding: 50px 15px 0;
+}
+
+@media (max-width: 600px) {
+    .dev-wrapper {
+        padding: 50px 0;
+    }
+}
+
+/* Prod */
+#page-header {
+    display: none;
+}
+
+#page-builder {
+    padding-bottom: 0;
+}
+
 /* Building */
+h1 {
+    margin-bottom: 30px;
+    padding: 0 20px;
+    color: #4b4743;
+    font-size: 28px;
+    font-weight: bold;
+    line-height: normal;
+    text-align: center;
+}
+
 .building {
-    width: min(400px, 100%);
     margin: 0 auto;
     background-color: #eee;
     border-radius: 5px;
@@ -34,23 +64,39 @@ body {
 .building-media video {
     width: 100%;
     object-fit: cover;
-    border-radius: 25px 25px 0 0;
-    border-radius: 5px;
+    border-radius: 5px 5px 0 0;
 }
 
 /* Building header overlay */
 .building-overlay {
-    border-radius: 25px 25px 0 0;
-    border-radius: 5px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    /* bottom: 0; */
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 5px 5px 0 0;
     overflow: hidden;
+    transition: all 1s cubic-bezier(0.25, 0.75, 0.5, 1.25);
+}
+
+.building-overlay.stash {
+    bottom: 0;
+    opacity: 1;
+    visibility: visible;
+}
+
+.building-overlay.stash.out {
+    bottom: unset;
+    opacity: 0;
+    visibility: hidden;
 }
 
 .media-options {
     position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.01) 100%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .media-btn-group {
@@ -63,7 +109,7 @@ body {
 .media-btn {
     display: flex;
     align-items: center;
-    padding: 6px 10px;
+    padding: 8px;
     background-color: #8a6e4b;
     color: #fff;
     font-size: 12px;
@@ -239,15 +285,15 @@ body {
 }
 
 .building-tab-btn-group {
-    display: flex;
-    justify-content: space-between;
+    gap: 30px;
     margin-bottom: 15px;
 }
 
 .building-tab-btn {
-    display: block;
+    position: relative;
+    padding: 4px 7px;
     color: #333;
-    font-weight: bold;
+    font-weight: normal !important;
     cursor: pointer;
 }
 
@@ -255,8 +301,24 @@ body {
     color: #8a6e4b;
 }
 
+.building-tab-btn.active::after {
+    position: absolute;
+    left: 8px;
+    right: 8px;
+    bottom: -5px;
+    content: '';
+    width: 100%;
+    height: 3px;
+    background: url('../assets/icons/active-line.svg');
+    background-repeat: no-repeat;
+}
+
 .panel-content.show {
     display: block;
+}
+
+.panel-content p {
+    font-size: 16px;
 }
 
 .panel-content p:last-of-type {
@@ -273,20 +335,21 @@ body {
 
 .previews-heading {
     font-weight: bold;
-    font-size: 36px;
-    margin: 20px 0 15px;
+    font-size: 30px;
+    margin-bottom: 30px;
     text-align: center;
 }
 
 .building-preview-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
     gap: 16px;
 }
 
 .building-preview {
     display: block;
     position: relative;
+    font-weight: normal !important;
 }
 
 .building-preview-image {
@@ -354,8 +417,68 @@ body {
 }
 
 /* Utilities */
-.building-overlay .media-options.hide,
+
+.media-options.hide,
 .building-media img.hide,
 .panel-content {
     display: none;
+}
+
+@media (min-width: 350px) {
+    .building-preview-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 450px) {
+    .panel-content p {
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 600px) {
+    h1 {
+        padding: 0;
+        font-size: 36px;
+        text-align: left;
+    }
+
+    .building-preview-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .previews-heading {
+        font-size: 36px;
+    }
+}
+
+@media (min-width: 750px) {
+    .media-btn {
+        padding: 10px;
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 900px) {
+    h1 {
+        font-size: 40px;
+    }
+
+    .building-preview-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .building-preview .building-title {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    #page-builder {
+        padding: 0;
+    }
+
+    #page-builder > .row > .col-xs-24 {
+        padding: 0;
+    }
 }

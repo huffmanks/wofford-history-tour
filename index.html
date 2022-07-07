@@ -12,12 +12,14 @@
 </head>
 
 <body>
-    <div class="building" data-building>
-        <div class="building-header">
-            <div class="building-media" data-media>
-                <img src="./assets/images/posters/hugh-black-poster.jpg" alt="Hugh S. Black Building" />
-            </div>
-            <div class="building-overlay">
+    <div class="dev-wrapper">
+        <h1>Wofford History Tour</h1>
+        <div class="building" data-building>
+            <div class="building-header">
+                <div class="building-media" data-media>
+                    <img src="./assets/images/posters/hugh-black-poster.jpg" alt="Hugh S. Black Building" />
+                </div>
+                <div class="building-overlay stash"></div>
                 <div class="media-options" data-media-options>
                     <div class="media-btn-group">
                         <button class="media-btn" data-watch>
@@ -49,104 +51,104 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="building-footer">
-            <div class="building-title">Hugh S. Black Building</div>
-            <div class="building-metrics">
-                <div class="metric-item">
-                    <div class="metric-icon">
-                        <img src="./assets/icons/location-stop.png" alt="map icon">
+            <div class="building-footer">
+                <div class="building-title">Hugh S. Black Building</div>
+                <div class="building-metrics">
+                    <div class="metric-item">
+                        <div class="metric-icon">
+                            <img src="./assets/icons/location-stop.png" alt="map icon">
+                        </div>
+                        <div class="metric-info stop">1</div>
+                        <div class="metric-label">/ 14 Stop</div>
                     </div>
-                    <div class="metric-info stop">1</div>
-                    <div class="metric-label">/ 14 Stop</div>
+                    <div class="metric-item">
+                        <div class="metric-icon">
+                            <img src="./assets/icons/duration.png" alt="clock icon">
+                        </div>
+                        <div class="metric-info">25s</div>
+                        <div class="metric-label">Duration</div>
+                    </div>
                 </div>
-                <div class="metric-item">
-                    <div class="metric-icon">
-                        <img src="./assets/icons/duration.png" alt="clock icon">
+                <div class="building-tab-container" data-building-tab>
+                    <div class="building-tab-btn-group">
+                        <a class="building-tab-btn active" role="button" data-building-tab-btn="1">Overview</a>
+                        <a class="building-tab-btn" role="button" data-building-tab-btn="2">Map</a>
+                        <a class="building-tab-btn" role="button" data-building-tab-btn="3">Transcript</a>
                     </div>
-                    <div class="metric-info">25s</div>
-                    <div class="metric-label">Duration</div>
+                    <div class="building-tabs">
+                        <div class="panel-content show" data-building-tab-content="1">
+                            <p>Hugh S. Black Building originally was funded by alumni donations and constructed in 1888 as Alumni Hall. It was the college’s first student residence hall.</p>
+                        </div>
+                        <div class="panel-content" data-building-tab-content="2">
+                            <img src="./assets/images/maps/hugh-black-map.png" alt="map" />
+                        </div>
+                        <div class="panel-content" data-building-tab-content="3">
+                            <p>In 1854 seven students and three professors became the first to begin studies at Wofford College. The students were all from South Carolina. They were all men and all white. Today, Wofford College is home to nearly 1,800 students from all over the world &mdash; students of all races, ethnicities, genders, faith-traditions and abilities &mdash; and the college is nationally recognized for the strength of its academic program, experiential learning opportunities, collaborative faculty-student learning environment and supportive alumni.</p>
+                            <p>This Wofford history walking tour was initiated and created by student researchers and student writers with the support of staff in the college&rsquo;s archives; the office of equity, diversity and inclusion; and marketing and communications. It&rsquo;s not exhaustive, but it presents the college&rsquo;s long and complex history in a user-friendly way.</p>
+                            <p>We hope you will enjoy our beautiful campus as we take you back in time and hopefully forward toward a Wofford College that continues to nurture future citizens, leaders and scholars.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="building-tab-container" data-building-tab>
-                <div class="building-tab-btn-group">
-                    <a class="building-tab-btn active" role="button" data-building-tab-btn="1">Overview</a>
-                    <a class="building-tab-btn" role="button" data-building-tab-btn="2">Map</a>
-                    <a class="building-tab-btn" role="button" data-building-tab-btn="3">Transcript</a>
-                </div>
-                <div class="building-tabs">
-                    <div class="panel-content show" data-building-tab-content="1">
-                        <p>Hugh S. Black Building originally was funded by alumni donations and constructed in 1888 as Alumni Hall. It was the college’s first student residence hall.</p>
-                    </div>
-                    <div class="panel-content" data-building-tab-content="2">
-                        <img src="./assets/images/maps/hugh-black-map.png" alt="map" />
-                    </div>
-                    <div class="panel-content" data-building-tab-content="3">
-                        <p>In 1854 seven students and three professors became the first to begin studies at Wofford College. The students were all from South Carolina. They were all men and all white. Today, Wofford College is home to nearly 1,800 students from all over the world &mdash; students of all races, ethnicities, genders, faith-traditions and abilities &mdash; and the college is nationally recognized for the strength of its academic program, experiential learning opportunities, collaborative faculty-student learning environment and supportive alumni.</p>
-                        <p>This Wofford history walking tour was initiated and created by student researchers and student writers with the support of staff in the college&rsquo;s archives; the office of equity, diversity and inclusion; and marketing and communications. It&rsquo;s not exhaustive, but it presents the college&rsquo;s long and complex history in a user-friendly way.</p>
-                        <p>We hope you will enjoy our beautiful campus as we take you back in time and hopefully forward toward a Wofford College that continues to nurture future citizens, leaders and scholars.</p>
-                    </div>
-                </div>
-            </div>
         </div>
-    </div>
-    <div class="building building-previews" style="margin-bottom: 100px;">
-        <div class="previews-heading">Next stops</div>
-        <div class="building-preview-container">
-            <a href="#" class="building-preview">
-                <div class="building-preview-image">
-                    <img src="./assets/images/previews/burwell-preview.jpg" alt="Burwell Building" />
-                </div>
-                <div class="preview-overlay">
-                    <div class="building-title">Burwell Building</div>
-                </div>
-                <div class="building-stop-number">2</div>
-            </a>
-            <a href="#" class="building-preview">
-                <div class="building-preview-image">
-                    <img src="./assets/images/previews/presidents-home-preview.jpg" alt="President’s Home" />
-                </div>
-                <div class="preview-overlay">
-                    <div class="building-title">President’s Home</div>
-                </div>
-                <div class="building-stop-number">3</div>
-            </a>
-            <a href="#" class="building-preview">
-                <div class="building-preview-image">
-                    <img src="./assets/images/previews/chandler-center-preview.jpg" alt="Chandler Center" />
-                </div>
-                <div class="preview-overlay">
-                    <div class="building-title">Chandler Center for Environmental Studies</div>
-                </div>
-                <div class="building-stop-number">4</div>
-            </a>
-            <a href="#" class="building-preview">
-                <div class="building-preview-image">
-                    <img src="./assets/images/previews/main-building-preview.jpg" alt="Main Building" />
-                </div>
-                <div class="preview-overlay">
-                    <div class="building-title">Main Building</div>
-                </div>
-                <div class="building-stop-number">5</div>
-            </a>
-            <a href="#" class="building-preview">
-                <div class="building-preview-image">
-                    <img src="./assets/images/previews/sandor-teszler-preview.jpg" alt="Sandor Teszler Library" />
-                </div>
-                <div class="preview-overlay">
-                    <div class="building-title">Sandor Teszler Library</div>
-                </div>
-                <div class="building-stop-number">6</div>
-            </a>
-            <a href="#" class="building-preview">
-                <div class="building-preview-image">
-                    <img src="./assets/images/previews/greene-hall-preview.jpg" alt="Greene Hall" />
-                </div>
-                <div class="preview-overlay">
-                    <div class="building-title">Greene Hall</div>
-                </div>
-                <div class="building-stop-number">7</div>
-            </a>
+        <div class="building building-previews">
+            <div class="previews-heading">Next stops</div>
+            <div class="building-preview-container">
+                <a href="#" class="building-preview">
+                    <div class="building-preview-image">
+                        <img src="./assets/images/previews/burwell-preview.jpg" alt="Burwell Building" />
+                    </div>
+                    <div class="preview-overlay">
+                        <div class="building-title">Burwell Building</div>
+                    </div>
+                    <div class="building-stop-number">2</div>
+                </a>
+                <a href="#" class="building-preview">
+                    <div class="building-preview-image">
+                        <img src="./assets/images/previews/presidents-home-preview.jpg" alt="President’s Home" />
+                    </div>
+                    <div class="preview-overlay">
+                        <div class="building-title">President’s Home</div>
+                    </div>
+                    <div class="building-stop-number">3</div>
+                </a>
+                <a href="#" class="building-preview">
+                    <div class="building-preview-image">
+                        <img src="./assets/images/previews/chandler-center-preview.jpg" alt="Chandler Center" />
+                    </div>
+                    <div class="preview-overlay">
+                        <div class="building-title">Chandler Center for Environmental Studies</div>
+                    </div>
+                    <div class="building-stop-number">4</div>
+                </a>
+                <a href="#" class="building-preview">
+                    <div class="building-preview-image">
+                        <img src="./assets/images/previews/main-building-preview.jpg" alt="Main Building" />
+                    </div>
+                    <div class="preview-overlay">
+                        <div class="building-title">Main Building</div>
+                    </div>
+                    <div class="building-stop-number">5</div>
+                </a>
+                <a href="#" class="building-preview">
+                    <div class="building-preview-image">
+                        <img src="./assets/images/previews/sandor-teszler-preview.jpg" alt="Sandor Teszler Library" />
+                    </div>
+                    <div class="preview-overlay">
+                        <div class="building-title">Sandor Teszler Library</div>
+                    </div>
+                    <div class="building-stop-number">6</div>
+                </a>
+                <a href="#" class="building-preview">
+                    <div class="building-preview-image">
+                        <img src="./assets/images/previews/greene-hall-preview.jpg" alt="Greene Hall" />
+                    </div>
+                    <div class="preview-overlay">
+                        <div class="building-title">Greene Hall</div>
+                    </div>
+                    <div class="building-stop-number">7</div>
+                </a>
+            </div>
         </div>
     </div>
 </body>
