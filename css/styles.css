@@ -478,7 +478,7 @@ h1 {
 
 @media (max-width: 576px) {
     #page-builder {
-        padding: 0;
+        padding: 30px 0 0;
     }
 
     #page-builder > .row > .col-xs-24 {
