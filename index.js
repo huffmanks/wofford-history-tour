@@ -118,11 +118,6 @@ buildings.map((building) => {
             buildingOverlay.classList.toggle('out')
             mediaOptions.classList.toggle('hide')
             audioPlayer.classList.toggle('hide')
-
-            // audioEl.currentTime = 0
-            // audioPlayIcon.src = './assets/icons/controls-play.png'
-
-            // updateAudioPlayer()
         })
     })
 
